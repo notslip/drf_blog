@@ -1,0 +1,1 @@
+blog training project on DRF and VUE
