@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.db import models
 
 
@@ -18,7 +18,7 @@ class Post(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
     tags = models.ManyToManyField('Tag', related_name='posts', blank=True)
-    author = models.ForeignKey(User, related_name='posts', on_delete=models.CASCADE, null=True, blank=True)
+    author = models.ForeignKey(get_user_model(), related_name='posts', on_delete=models.CASCADE, null=True, blank=True)
     status = models.CharField(max_length=2, choices=STATUS_CHOICES, default=MODERATED)
 
     def __str__(self):

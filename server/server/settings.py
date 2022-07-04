@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'account.apps.AccountConfig',
     'rest_framework',
 ]
 
@@ -53,7 +54,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'server.urls'
 
-
+AUTH_USER_MODEL = 'account.User'
 
 TEMPLATES = [
     {
