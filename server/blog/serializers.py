@@ -3,7 +3,9 @@ from blog.models import Post, Tag
 
 
 class PostSerializer(serializers.HyperlinkedModelSerializer):
-    author = serializers.HiddenField(default=serializers.CurrentUserDefault)
+    author = serializers.HyperlinkedRelatedField(default=serializers.CurrentUserDefault,
+                                                 read_only=True,
+                                                 view_name="user-detail")
 
     class Meta:
         model = Post
