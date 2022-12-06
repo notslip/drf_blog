@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from blog.views import PostViewSet, TagViewSet
-from account.views import UserViewSet, GroupViewSet
+from account.views import UserViewSet, GroupViewSet, LoginView, LogoutView, SelfCheckView, RegistrationView
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -28,4 +28,9 @@ router.register(r'tags', TagViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('login/', LoginView.as_view()),
+    path('logout/', LogoutView.as_view()),
+    path('check/', SelfCheckView.as_view()),
+    path('registration/', RegistrationView.as_view()),
+
 ]
