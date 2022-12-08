@@ -1,9 +1,15 @@
-from django.shortcuts import render
-from rest_framework import viewsets
+
+from rest_framework import viewsets, generics
 from rest_framework import permissions
+from rest_framework.mixins import CreateModelMixin, DestroyModelMixin
+
+from blog.permissions import DeleteIsOwnerOrAdmin
+from comments.models import Comment
+from comments.serializers import CommentSerializer
 
 
-class CommentViewSet(viewsets.ModelViewSet):
-    pass
-
+class CommentCreateDeleteViewSet(CreateModelMixin, DestroyModelMixin, viewsets.GenericViewSet):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+    permission_classes = [permissions.IsAuthenticated, DeleteIsOwnerOrAdmin]
 

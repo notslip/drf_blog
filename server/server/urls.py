@@ -18,12 +18,14 @@ from django.urls import path, include
 from rest_framework import routers
 from blog.views import PostViewSet, TagViewSet
 from account.views import UserViewSet, GroupViewSet, LoginView, LogoutView, SelfCheckView, RegistrationView
+from comments.views import CommentCreateDeleteViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
 router.register(r'groups', GroupViewSet)
 router.register(r'posts', PostViewSet)
 router.register(r'tags', TagViewSet)
+router.register(r'comment', CommentCreateDeleteViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
