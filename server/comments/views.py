@@ -13,3 +13,7 @@ class CommentCreateDeleteViewSet(CreateModelMixin, DestroyModelMixin, viewsets.G
     serializer_class = CommentSerializer
     permission_classes = [permissions.IsAuthenticated, CommentDeleteIsOwnerOrAdmin]
 
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user)
+
+
