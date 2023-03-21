@@ -1,0 +1,20 @@
+.myBtn{
+    background-color: teal;
+    border: 2px solid black;
+    border-radius: 5px;
+    /*margin: 5px 10px;*/
+    padding: 5px 15px;
+    font-size: 14px;
+}
+.myBtn a{
+    text-decoration: none;
+    color: black;
+}
+
+.myBtn:hover{
+    background-color: #05c2bd;
+}
+
+.myBtn:focus{
+    box-shadow:  0px 0px 2px black;
+}

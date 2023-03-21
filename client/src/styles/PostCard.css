@@ -1,0 +1,40 @@
+.PostCard{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    border: 2px solid teal;
+    margin: 20px;
+}
+.PostCard h1{
+    margin-bottom: 10px;
+    padding: 5px 5px 5px 10px;
+    background-color: lightskyblue;
+}
+.PostCard p{
+    margin: 5px 10px;
+}
+
+.post_btns{
+    align-self: flex-end;
+    padding: 0px 15px;
+}
+
+.info {
+    margin-top: 5px;
+    background-color: gray;
+    padding: 5px 10px 5px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.info a{
+    margin: 5px 10px;
+    text-decoration: none;
+}
+
+.tags a{
+    color: #3d3d3d;
+}
+
+.author a{
+    color: black;
+}

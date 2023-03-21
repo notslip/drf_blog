@@ -1,6 +1,7 @@
 from rest_framework import serializers
 
 from comments.models import Comment
+from account.models import User
 
 
 class ParentCommentSerializer(serializers.ModelSerializer):
@@ -10,12 +11,20 @@ class ParentCommentSerializer(serializers.ModelSerializer):
         fields = ['id', 'text', 'author', 'date', 'post']
 
 
+class UserCommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username']
+
+
 class CommentSerializer(serializers.ModelSerializer):
         parent_comment = ParentCommentSerializer()
-        author = serializers.PrimaryKeyRelatedField(
-            read_only=True,
-            default=serializers.CurrentUserDefault()
-        )
+        # author = serializers.StringRelatedField(
+        #     read_only=True,
+        #     default=serializers.CurrentUserDefault()
+        # )
+
+        author = UserCommentSerializer(read_only=True)
         class Meta:
             model = Comment
             fields = ['id', 'text', 'author', 'date', 'post', 'parent_comment']

@@ -1,0 +1,22 @@
+.header{
+    background-color: teal;
+    width: 100%;
+    min-height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 15px;
+    justify-content: center;
+}
+.header a{
+    text-decoration: none;
+    margin: 0 30px;
+    padding: 10px;
+    color: black;
+
+}
+
+.header a:hover{
+    background-color: #05c2bd;
+    border-radius: 10px;
+}

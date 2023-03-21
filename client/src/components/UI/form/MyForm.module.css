@@ -1,0 +1,11 @@
+.myForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+input:nth-child(n){
+    margin: 10px;
+}
+button:nth-child(n){
+    margin: 10px;
+}

@@ -1,0 +1,47 @@
+
+.profileInfo{
+    justify-content: space-between;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+.profileInfo p{
+    padding: 5px;
+}
+
+.blockSelfProfile{
+    display: flex;
+    flex-wrap: wrap;
+}
+.profileLists{
+    display: flex;
+}
+.profileListPost{
+    padding: 10px;
+    flex: 1 1 40%;
+}
+.profileListPost ul{
+    list-style: none;
+}
+.profileListPost li:nth-child(odd){
+    background-color: gray;
+}
+.profileListPost a{
+    text-decoration: none;
+    color: black;
+}
+
+.profileListComment{
+    padding: 10px;
+    flex: 1 1 40%;
+}
+.profileListComment ul{
+    list-style: none;
+}
+.profileListComment li:nth-child(odd){
+    background-color: gray;
+}
+.profileListComment a{
+    text-decoration: none;
+    color: black;
+}
