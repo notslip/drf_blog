@@ -32,9 +32,9 @@ const CommentCard = (props) => {
             </div>
             
             {isThereParentComment(props.comment.parent_comment)}
-            {props.comment.text}
+            <div className='commentCardText'>{props.comment.text}</div>
             
-            {props.user!==null ? <MyButton onClick={answerToComment}>Ответить</MyButton>:<div></div>}
+            <div className='answerButton'>{props.user!==null ? <MyButton onClick={answerToComment}>Ответить</MyButton>:<div></div>}</div>
             
         </div>
     );

@@ -29,6 +29,8 @@
     padding: 5px;
     border: 1px solid gray;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 .authorDateComment{
     
@@ -51,6 +53,12 @@
     background-color: gray;
     border: 1px solid gray;
     border-radius: 5px;
+}
+.commentCardText{
+    font-size: 15px;
+}
+.answerButton{
+    margin-left: auto;
 }
 .commentForm{
     width: 100%;
