@@ -12,6 +12,7 @@ import User from "../pages/User";
 import Registration from "../pages/registration";
 import Profile from "../pages/profile";
 import Notfound from "../pages/erorr";
+import Singletag from "../pages/singletag";
 
 const MainRoutes = () => {
     return (
@@ -25,6 +26,7 @@ const MainRoutes = () => {
                     <Route path="registration" element={<Registration/>}/>
                     <Route path="profile/:id" element={<Profile/>}/>
                     <Route path="*" element={<Notfound/>}/>
+                    <Route path="tag/:id" element={<Singletag/>}/>
                 </Route>
             </Routes>
         </div>

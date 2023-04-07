@@ -15,7 +15,7 @@ const PostCard = (props) => {
             <div className="info">
                 <div className='tags'>
                     {props.post.tags.map(tag =>
-                        <a key={tag.id} href={tag.url}>{tag.title} </a>,
+                        <a key={tag.id} href={`/tag/${tag.id}`}>{tag.title} </a>,
                     )}
                 </div>
                 <div className='author'>

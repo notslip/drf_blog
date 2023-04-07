@@ -20,3 +20,35 @@
     background-color: #05c2bd;
     border-radius: 10px;
 }
+
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#tagsListNavLink{
+    text-decoration: none;
+    margin: 0 30px;
+    padding: 10px;
+    color: black;
+    cursor: pointer;
+}
+
+#tagsListNavLink:hover{
+    background-color: #05c2bd;
+    border-radius: 10px;
+}
+.navTagList{
+    position: absolute;
+    top: 10%;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-height: 50%;
+    z-index: 5;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}

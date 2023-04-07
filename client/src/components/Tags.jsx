@@ -1,29 +1,37 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import TagService from "../API/TagService";
-import "../styles/tag.css"
+
 
 const Tags = () => {
-    const [tags, setTags]=useState([]);
-    const [tagsToogle, setTagsToogle]=useState(false);
-    useEffect(()=>{fetchTags()},[]);
-    async function fetchTags(){
+    const refEl = useRef(null);
+    const [tags, setTags] = useState([]);
+    const [tagsToogle, setTagsToogle] = useState(false);
+    useEffect(() => {
+        fetchTags();
+        const onClick = e => refEl.current.contains(e.target) || setTagsToogle(false);
+        document.addEventListener('click', onClick);
+        return () => document.removeEventListener('click', onClick);
+    }, []);
+
+    async function fetchTags() {
         const data = await TagService.getAllTag();
         setTags(data.results);
     }
-    function handleToogle(){
-        if(tagsToogle){
+    function handleToogle() {
+        if (tagsToogle) {
             setTagsToogle(false);
-        } else{
+        } else {
             setTagsToogle(true);
         }
     }
 
     return (
-        <div>
+        <div ref={refEl}>
             <span onClick={handleToogle}>Tags</span>
-            {tagsToogle ? <div className='tagList'>
-                            {tags.map(tag => <h3>tag</h3>)}
-                        </div> : null}    
+            {tagsToogle ? <div className='navTagList'>
+                {tags.map(tag => <Link key={tag.id} to={`tag/${tag.id}`} onClick={handleToogle}>{tag.title}</Link>)}
+            </div> : null}
         </div>
     )
 };

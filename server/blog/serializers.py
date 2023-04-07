@@ -10,10 +10,16 @@ class PostAuthorSerializer(serializers.ModelSerializer):
         model = User
         fields = ['id', 'username']
 
+class TagPostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = ['id', 'title']
+
 class TagSerializer(serializers.ModelSerializer):
+    posts=TagPostSerializer(many=True)
     class Meta:
         model = Tag
-        fields = ['id', 'title']
+        fields = ['id', 'title', 'posts']
 
 
 class PostSerializer(serializers.ModelSerializer):

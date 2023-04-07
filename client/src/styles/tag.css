@@ -1,8 +1,18 @@
 .tagList{
-    position: absolute;
-    top:50px;
     max-width: 800px;
+    width: 100%;
     display: flex;
-    max-height: 50%;
-    z-index: 5;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.tagList a{
+    width: 100%;
+    padding: 10px 30%;
+   
+}
+
+.tagList a:nth-child(odd){
+    background-color: gray;
 }
